@@ -1,0 +1,82 @@
+{% load static %}
+
+{% include 'header.html' %}
+<div class="conainer-img-panel-questions">
+  <img src="{% static 'img/PrinImg/pagina0 - foto sola.jpg' %}" alt="">
+</div>
+
+
+
+
+<div class="container" style="margin-top:50px;margin-bottom:50px;--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li  class="breadcrumb-item"><a style="text-decoration: none;color:black;" href="/productos" class="">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">{{productos.title}}</li>
+    </ol>
+  </div>
+
+  
+    <div class="row row-cols-1 row-cols-lg-2 container" style="margin:auto;">
+      <div class="col img-producto-detail">
+        <img src="{{productos.image.url}}" alt="{{productos.title}}">
+    </div>
+      <div class="col" style="">
+        <h2>{{productos.title}}</h2>
+            <div class="row items-row-starts" style="width:100%;">
+                <div class="col">
+
+                    <i class="fa-sharp fa-solid fa-star checked"></i>
+                    <i class="fa-sharp fa-solid fa-star checked"></i>
+                    <i class="fa-sharp fa-solid fa-star checked"></i>
+                    <i class="fa-sharp fa-solid fa-star checked"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="col">
+                    <p>6 reviews</p>
+                </div>
+                <div class="col">
+                    <a href="">Add your review</a>
+                </div>
+            </div>
+
+            <h2 style="border-bottom: 1px solid #C6C6C6; padding-bottom: 15px;">${{productos.precio}}</h2>
+            
+
+            <p>{{productos.description}}</p>
+            <a href="#" class="btn btn-primary " style="font-size: 20px; font-weight:bold ; margin-bottom: 90px;">Pedir Informes</a>
+        </div>
+        
+      
+    </div>
+    
+
+    <h2 style="font-weight: bold; text-align: center; margin:100px 0;"class="tambien mt-5">Tambien te puede gustar</h2>
+    <div class="cont-servicios-mx container" style="">
+
+
+      <div class="cnt-servicios" id="servicios">
+        {% for producto in related_products %}
+     
+
+     
+        <div  class="cnt-servicios-box">
+          <div class="img-servicio">
+    <img class="img" src="{{producto.image.url}}"/>
+          </div>
+          <div class="info-servicio">
+              <h3>{{producto.title}}</h3>
+              <p>{{producto.Url}}</p>
+              <a href="{% url 'productos:productos_detail' producto.id %}">
+                Ver mas >
+                </a>
+              </div>
+      </div>
+
+           
+        {% endfor %}
+    
+   
+    </div>
+
+</div>
+{% include 'footer.html' %}

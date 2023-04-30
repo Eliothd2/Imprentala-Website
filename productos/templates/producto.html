@@ -1,0 +1,62 @@
+{% load static %}
+
+{% include 'header.html' %}
+
+<div class="conainer-img-panel-questions">
+  <img src="{% static 'img/PrinImg/pagina0 - foto sola.jpg' %}" alt="">
+</div>
+<form class="container" style="margin-top:50px;display:flex;" method="get" >
+    <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+    
+    <button type="submit" class="bg-warning input-group-text">Buscar</button>
+</div>
+</form>
+
+<div class="cont-servicios-mx container" style="">
+
+
+  <div class="cnt-servicios" id="servicios">
+    {% for producto in productos %}
+
+
+
+
+      <div  class="cnt-servicios-box">
+          <div class="img-servicio">
+    <img class="img" src="{{producto.image.url}}"/>
+          </div>
+          <div class="info-servicio">
+              <h3>{{producto.title}}</h3>
+              <p>{{producto.Url}}</p>
+              <a href="{% url 'productos:productos_detail' producto.id %}">
+                Ver mas >
+                </a>
+              </div>
+      </div>
+
+    
+
+    {% endfor %}
+    
+  </div>
+    <div class="container-despegable-services"></div>
+  </div>
+  
+
+
+
+<!-- 
+{% for producto in productos %}
+
+
+
+<h2>{{producto.title}}</h2>
+<p>{{producto.description}}</p>
+<img src="{{producto.image.url}}" alt="{{producto.title}}">
+<a href="{% url 'productos:productos_detail' producto.id %}">{{producto.title}}</a>
+{% endfor %} -->
+
+
+
+{% include 'footer.html' %}

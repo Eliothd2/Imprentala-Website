@@ -1,0 +1,54 @@
+{% load static %}
+{% include 'header.html' %}
+<div class="conainer-img-panel-questions">
+  <img src="{% static 'img/PrinImg/pagina0 - foto sola.jpg' %}" alt="">
+</div>
+
+<div class="container">
+    <div class="container-form" >
+      <div class="col container-contactanos">
+
+
+
+        <form id="form" method="post" class="form">
+
+            {% csrf_token %}
+            {{ form }}
+                <button class="btnContactos" type="submit">Enviar</button>
+            
+            
+                {{mensaje}}
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <div class="col container-contactanos ">
+    <div class="col-derecha">
+    <h1 class="h1-contactanos">Contáctanos</h1>
+<div class="sub-title-contactanos">Preguntas? Comentarios? Listo para empezar un proyecto?</div>
+<div class="text-contactanos-HD">Si deseas que nos pongamos en contacto contigo para cotizar un producto o servicio en esta área puedes enviarnos la información de tu proyecto y con gusto te atenderemos!</div>
+<div class="links-contactos">
+  <a href="#">Facebook</a>
+  <a href="#">Instagram</a>
+  <a href="#">Googgle</a>
+</div>
+<a class="mail-contactos"href="mailto:pinedarodriguezelio@gmail.com">info@imprentala.com</a>
+<!-- <a href="tel:+612 375-1150">(612) 375-1150</a> -->
+</div>
+</div>
+    </div>
+  </div>
+  <h1 style="font-weight: bold; margin:70px;text-align:center;">Preguntas Frecuentes</h1>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3595.7313478290935!2d-100.4111652728702!3d25.68019889453728!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866297c4b39008e5%3A0x38081ab457233b9f!2sIMPR%C3%89NTALA!5e0!3m2!1ses-419!2smx!4v1679973095021!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+{% include 'footer.html' %}
+

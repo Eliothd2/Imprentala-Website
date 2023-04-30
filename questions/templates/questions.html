@@ -1,0 +1,51 @@
+{% load static %}
+
+{% include 'header.html' %}
+
+<div class="conainer-img-panel-questions">
+  <img src="{% static 'img/PrinImg/pagina0 - foto sola.jpg' %}" alt="">
+</div>
+
+
+<form class="container" style="margin-top: 100px;margin-bottom: 50px;" method="get" >
+  <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+  
+  <button type="submit" class="bg-warning input-group-text">Buscar</button>
+</div>
+</form>
+
+
+<div class="container row g-0 text-center" style="margin: auto; margin-bottom: 100px;">
+  <div class="col-lg-8 container-preguntas-frecuentes" style="padding:0 20px;">
+<h1>Preguntas Frecuentes</h1>
+<p class="description-preguntas-frecuentes">Se ofrece aquí respuesta a una selección de las preguntas más frecuentes planteadas por los usuarios del servicio de consultas lingüísticas.</p>
+{% for pregunta in preguntas %}
+<a href="{% url 'question:question_detail' pregunta.id %}">
+
+<div class="container-unique-pregunta">
+  <h4>{{pregunta.tituloP}}<i style="margin-left: 10px;"class="fa-sharp fa-solid fa-arrow-right"></i></h4>
+  <!-- <p>{{pregunta.descripcionP}}</p> -->
+</div>
+</a>
+
+{% endfor %}
+</div>
+<div class="col-6 col-md-4 cotainer-preguntas-hasnos">
+  <div class="container-anuncio-barra-lateral">
+    <div class="container-barra-lateral-up">
+      <H3>Contactanos</H3>
+      <p>Contactanos si tienes alguna duda</p>
+<a class="btn" style="background:#282828; color:white;" href="">Contactanos</a>
+    </div>
+    <div class="container-barra-lateral-down">
+      <p>Hora de servicio</p>
+      <div class="mediante-correo"><i class="fa-solid fa-envelope"></i>Soporte por correo</div>
+      <div class="fifty">De lunes a viernes: 9:00am-8:30pm</div>
+      <div class="fifty">De sábado a domingo: 10:00am-5:30pm</div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% include 'footer.html' %}

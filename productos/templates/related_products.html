@@ -1,0 +1,27 @@
+<h1>asdads</h1>
+{% for producto in productos %}
+
+
+
+<div class="product-card">
+  <a href="{% url 'productos:productos_detail' producto.id %}">
+
+  <!-- <div class="badge">Hot</div> -->
+  <div class="product-tumb">
+    <img src="{{producto.image.url}}" alt="">
+  </div>
+  <div class="product-details">
+    <span class="product-catagory">{{producto.categoria}}</span>
+    <h4><a href="{% url 'productos:productos_detail' producto.id %}">{{producto.title}}</a></h4>
+    <p>{{producto.description}}</p>
+    <div class="product-bottom-details">
+      <div class="product-price"><small>{{producto.precioDescuento}}</small>${{producto.precio}}</div>
+      <div class="product-links">
+        <a href=""><i class="fa-sharp fa-solid fa-envelope"></i></a>
+        <!-- <a href=""><i class="fa fa-shopping-cart"></i></a> -->
+      </div>
+    </div>
+  </div>
+  </a>
+</div>
+{% endfor %}
